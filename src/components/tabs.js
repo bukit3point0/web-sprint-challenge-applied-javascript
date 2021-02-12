@@ -24,13 +24,10 @@ const Tabs = (topics) => {
     newTopic.classList.add("tab");
     newTopic.textContent = topic;
     topicsDiv.appendChild(newTopic);
-
   })
 
   return topicsDiv;
 }
-
-const topics2= ["javascript","bootstrap","technology","jquery","node.js"]
 
 const tabsAppender = (selector) => {
   // TASK 4
@@ -42,18 +39,16 @@ const tabsAppender = (selector) => {
   //
 
   const topicsContainer = document.querySelector(selector)
-  
-
-   
-    axios.get("https://lambda-times-api.herokuapp.com/topics")
-    .then(res => {
-      const array = res.data.topics;
-      // console.log(array);        
-      topicsContainer.appendChild(Tabs(array))
-    })
-    .catch(err => {
-      console.log(`YOU FOOL YOU HECKED UP ${err}`)
-    })
+     
+  axios.get("https://lambda-times-api.herokuapp.com/topics")
+  .then(res => {
+    const array = res.data.topics;
+    // console.log(array);        
+    topicsContainer.appendChild(Tabs(array))
+  })
+  .catch(err => {
+    console.log(`YOU FOOL YOU HECKED UP ${err}`)
+  })
 
 }
 
