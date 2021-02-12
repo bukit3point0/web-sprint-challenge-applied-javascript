@@ -78,7 +78,7 @@ const cardAppender = (selector) => {
   .catch (err => {
     console.log(`EVERYTHING IS BAD AND THE WORLD IS ON FIRE ${err}`);
   })
-  //adding this to test the git push
+  
 }
 
 export { Card, cardAppender }
